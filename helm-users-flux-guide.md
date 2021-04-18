@@ -1,7 +1,7 @@
 # Helm Users! What Can Flux v2 Do For You
 
 author
-:   Kingdon Barrett and Scott Rigby
+:   @kingdonb and @r6by
 
 date
 :   2021-05-05
@@ -32,6 +32,13 @@ Blog on Kubernetes
 * Kyverno
 * Webhook Receiver
 * Wordpress
+
+# DEMO
+
+(just kidding)
+
+**Live Activity**
+
 * Jenkins
 * Okteto Terminal
 * Linkerd2
@@ -44,6 +51,11 @@ We will install all controllers
 * source controller
 * kustomize controller
 * helm controller
+
+# `flux bootstrap`
+
+We will install all controllers
+
 * notification controller
 * (image-automation-controller)
 * (image-reflector-controller)
@@ -146,10 +158,12 @@ A presentation tool for Rubyist
 
 Bootstrapping with Kind (Kubernetes in Docker)
 
-`[add Scott's gist link here]`
+`https://gist.github.com/scottrigby/65c1fbb1f6437f6cfa11b594cf8e26a9`
 
 # Thanks
 
 Thank You (Audience)
 
 Thanks to KubeCon and CloudNativeCon 2021 Organizers
+
+Thanks to CNCF

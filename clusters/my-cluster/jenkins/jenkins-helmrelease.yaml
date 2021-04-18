@@ -15,6 +15,7 @@ spec:
   interval: 15m0s
   install:
     createNamespace: true
+  releaseName: jenkins
   targetNamespace: jenkins
   values:
     additionalAgents: {}

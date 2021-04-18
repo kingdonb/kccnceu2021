@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: receiver
+  name: notification-controller
   namespace: flux-system
 spec:
   type: LoadBalancer

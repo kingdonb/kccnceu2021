@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: notification-controller
+  name: notification-controller-webhook
   namespace: flux-system
 spec:
   type: LoadBalancer

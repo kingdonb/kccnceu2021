@@ -1,0 +1,26 @@
+---
+id: kccnceu2021
+base_name: helm-users-flux-guide
+tags:
+- flux
+- fluxcd
+- helm
+- presentation
+- kubecon
+presentation_date: '2021-05-05'
+presentation_start_time: '2021-05-05T13:10:00+02:00'
+presentation_end_time: '2021-05-05T13:45:00+02:00'
+version: 2021.5.5.0
+licenses: []
+slideshare_id: 
+speaker_deck_id: 
+ustream_id: 
+vimeo_id: 
+youtube_id: 
+author:
+  markup_language: :markdown
+  name: Kingdon Barrett
+  email: kingdon@weave.works
+  rubygems_user: yebyen
+  slideshare_user: KingdonBarrett
+  speaker_deck_user: 

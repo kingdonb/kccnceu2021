@@ -184,7 +184,11 @@ A presentation tool for Rubyist
 
 Follow along at home - gist following these examples
 
-[bit.ly/32rUInK](https://bit.ly/32rUInK)
+* [bit.ly/32rUInK](https://bit.ly/32rUInK)
+
+`bit.ly/32rUInK`
+
+JIT presentation! Instructions ready by the time you read this
 
 # Thanks
 

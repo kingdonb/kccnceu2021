@@ -20,7 +20,7 @@ end-time
 
 * Talk about Flux + Helm Controller
 * Flux CRDs - HelmRelease, Kustomization, (...)
-* Demo After Slides
+* Demo During Slides (**N**arrow **E**xpand)
 
 # DEMO
 
@@ -35,7 +35,7 @@ Blog on Kubernetes
 
 # DEMO
 
-(just kidding)
+(just kidding - more)
 
 **Live Activity**
 
@@ -66,33 +66,48 @@ Requirement to make Flux secure for multi-tenancy
 
 (Keep Kubernetes safe from Wordpress)
 
+[fluxcd/flux2-multi-tenancy](https://github.com/fluxcd/flux2-multi-tenancy#readme)
+
 # webhook
 
-Receiver configuration allows Flux to sync instantly on `git push`
+`Receiver` configuration allows Flux to sync instantly on `git push`
+
+[flux-system-receiver.yaml](/kingdonb/kccnceu2021/tree/main/clusters/my-cluster/flux-resources/flux-system-receiver.yaml)
+[notification-controller-webhook-lb](/kingdonb/kccnceu2021/tree/main/clusters/my-cluster/flux-resources/notification-controller-lb.yaml)
+
+[webhook-receivers guide](https://toolkit.fluxcd.io/guides/webhook-receivers/)
 
 # Wordpress
 
 Another application installed via Helm
 
+[bitnami/wordpress](https://github.com/bitnami/charts/tree/master/bitnami/wordpress)
+
 # Jenkins
 
 Another application installed via Helm
+
+[jenkinsci/helm-charts](https://github.com/jenkinsci/helm-charts)
 
 # Terminal
 
 Another application installed via Helm
 
+[okteto/terminal](https://github.com/okteto/terminal)
+
 # Linkerd2
 
 Not just another application
 
-(Another application installed via Helm)
+(Another application installed via Helm - psych, we used `arkade` for this)
 
 # Flagger
 
 Progressive Delivery with Flux and Flagger
 
 Another project in the FluxCD umbrella
+
+Depends on Linkerd2 (or Istio, AWS App Mesh, nginx...)
 
 # So Much More
 
@@ -102,13 +117,7 @@ We wanted to show you so much more
 
 Secrets Management
 
-# So Much More
-
-We wanted to show you so much more
-
-* `alexellis/arkade` - opinionated Helm (and other) packages for your Kubernetes cluster
-
-Package Management
+[mozilla-sops guide](https://toolkit.fluxcd.io/guides/mozilla-sops/)
 
 # So Much More
 
@@ -117,7 +126,15 @@ We wanted to show you so much more
 * image-automation
 * image-reflector-controller
 
-Flux v2's new and improved image automation
+[Automate image updates to Git](https://toolkit.fluxcd.io/guides/image-update/)
+
+# So Much More
+
+We wanted to show you so much more
+
+* [alexellis/arkade](https://github.com/alexellis/arkade) - opinionated Helm (and other) packages for your Kubernetes cluster
+
+Curated Constellations - make your own, or borrow opinions of others :)
 
 # So Much More
 
@@ -142,7 +159,7 @@ We wanted to show you so much more
 
 * ingress configuration
 
-(We used nginx-ingress)
+(We used [nginx-ingress](https://kubernetes.github.io/ingress-nginx/deploy/#using-helm))
 
 # So Much More
 
@@ -152,11 +169,11 @@ We wanted to show you so much more
 
 A presentation tool for Rubyist
 
-(How we got those neat tortoise/hare icons at the bottom of the screen!)
+(neat tortoise/hare icons at the bottom of the slides!)
 
 # DEMO NOTES
 
-Follow along at home
+Follow along at home - gist following these examples
 
 [bit.ly/32rUInK](https://bit.ly/32rUInK)
 
@@ -167,3 +184,9 @@ Thank You (Audience) - Questions at the Flux Pavilion!
 Thanks to CNCF, Linux Foundation, Weaveworks
 
 Thanks to KubeCon and CloudNativeCon 2021 Organizers
+
+# Questions
+
+Flux Pavilion - meet Kingdon and Scott, Weaveworks
+
+After KCCNC EU 2021 - Come to Slack - CNCF #flux (any time!)

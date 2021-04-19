@@ -162,8 +162,8 @@ Bootstrapping with Kind (Kubernetes in Docker)
 
 # Thanks
 
-Thank You (Audience)
+Thank You (Audience) - Questions at the Flux Pavilion!
+
+Thanks to CNCF, Linux Foundation, Weaveworks
 
 Thanks to KubeCon and CloudNativeCon 2021 Organizers
-
-Thanks to CNCF

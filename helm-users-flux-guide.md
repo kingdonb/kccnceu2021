@@ -68,12 +68,14 @@ Requirement to make Flux secure for multi-tenancy
 
 [fluxcd/flux2-multi-tenancy](https://github.com/fluxcd/flux2-multi-tenancy#readme)
 
+Follow this carefully!
+
 # webhook
 
-`Receiver` configuration allows Flux to sync instantly on `git push`
+`Receiver` config allows Flux to sync instantly on `git push`
 
 [flux-system-receiver.yaml](/kingdonb/kccnceu2021/tree/main/clusters/my-cluster/flux-resources/flux-system-receiver.yaml)
-[notification-controller-webhook-lb](/kingdonb/kccnceu2021/tree/main/clusters/my-cluster/flux-resources/notification-controller-lb.yaml)
+[webhook-lb.yaml](/kingdonb/kccnceu2021/tree/main/clusters/my-cluster/flux-resources/notification-controller-lb.yaml)
 
 [webhook-receivers guide](https://toolkit.fluxcd.io/guides/webhook-receivers/)
 
@@ -97,23 +99,29 @@ Another application installed via Helm
 
 # Linkerd2
 
-Not just another application
+*Not just* another application
 
-(Another application installed via Helm - psych, we used `arkade` for this)
+(Yes, Linkerd2 does provide Helm charts, but we don't install that way, we used `arkade` and `linkerd2` cli)
+
+[linkerd getting started](https://linkerd.io/2.10/getting-started/)
+
+[arkade install linkerd](https://github.com/openfaas/openfaas-linkerd-workshop#step-3-install-linkerd-2-onto-the-cluster)
 
 # Flagger
 
-Progressive Delivery with Flux and Flagger
+Progressive Delivery with Flux and *Flagger*
 
 Another project in the FluxCD umbrella
 
-Depends on Linkerd2 (or Istio, AWS App Mesh, nginx...)
+Depends on *Linkerd2* (option Istio, AWS App Mesh, nginx...)
 
 # Flux2 Kustomize Helm
 
 [fluxcd/flux2-kustomize-helm-example](https://github.com/fluxcd/flux2-kustomize-helm-example)
 
-Example how to manage multiple clusters (staging, production)
+Example how to manage *multiple clusters*
+
+(eg. staging, production)
 
 # So Much More
 
@@ -138,7 +146,7 @@ We wanted to show you so much more
 
 We wanted to show you so much more
 
-* [alexellis/arkade](https://github.com/alexellis/arkade) - opinionated packages
+* *[arkade](https://github.com/alexellis/arkade)* - opinionated helm packages
 
 Curated Constellations - make your own, or borrow opinions of others :) we show you ours
 
@@ -146,12 +154,12 @@ Curated Constellations - make your own, or borrow opinions of others :) we show 
 
 We wanted to show you so much more
 
-* cert-manager
+* *cert-manager*
 
 Let's Encrypt certificates
 
-[cert-manager](https://cert-manager.io)
-[docs](https://cert-manager.io/docs/)
+[cert-manager.io website](https://cert-manager.io)
+[cert-manager.io/docs](https://cert-manager.io/docs/)
 
 # So Much More
 
@@ -160,13 +168,13 @@ We wanted to show you so much more
 * [loft-sh/kiosk](https://github.com/loft-sh/kiosk)
 * [loft.sh](https://loft.sh)
 
-Manage multi-tenancy another way (entry-level configuration)
+Manage *multi-tenancy* another way
 
 # So Much More
 
 We wanted to show you so much more
 
-* ingress configuration
+* *ingress* configuration
 
 (We used [nginx-ingress](https://kubernetes.github.io/ingress-nginx/deploy/#using-helm))
 
@@ -176,7 +184,7 @@ We wanted to show you so much more
 
 * [Rabbit](https://rabbit-shocker.org)
 
-A presentation tool for Rubyist
+A *presentation* tool for Rubyist
 
 (neat tortoise/hare icons at the bottom of the slides!)
 
@@ -188,18 +196,22 @@ Follow along at home - gist following these examples
 
 `bit.ly/32rUInK`
 
-JIT presentation! Instructions ready by the time you read this
+*JIT presentation*! Instructions ready by the time you read this
 
 # Thanks
 
-Thank You (Audience) - Questions at the Flux Pavilion!
+Thank You (*Audience*) - Questions at the Flux Pavilion!
 
 Thanks to CNCF, Linux Foundation, Weaveworks
 
-Thanks to KubeCon and CloudNativeCon 2021 Organizers
+Thanks to KubeCon and CloudNativeCon 2021 *Organizers*
 
 # Questions
 
-Flux Pavilion - meet Kingdon and Scott, Weaveworks
+Visit *Flux Pavilion* - meet us live after - Kingdon and Scott, Weaveworks DX Team
 
-After KCCNC EU 2021 - Come to Slack - CNCF #flux (any time!)
+After KCCNC EU 2021? _Slack_
+
+Supported by *Volunteers* around the world
+
+CNCF: `#flux` and `#flagger`

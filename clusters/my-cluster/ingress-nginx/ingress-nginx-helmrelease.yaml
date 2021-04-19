@@ -16,3 +16,4 @@ spec:
   install:
     createNamespace: true
   targetNamespace: ingress-nginx
+  releaseName: nginx-ingress

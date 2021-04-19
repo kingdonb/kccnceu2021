@@ -15,3 +15,4 @@
 #  dependsOn:
 #  - name: flux-system
 #    namespace: flux-system
+#  releaseName: kyverno

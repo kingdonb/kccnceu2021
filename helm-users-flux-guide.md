@@ -109,6 +109,12 @@ Another project in the FluxCD umbrella
 
 Depends on Linkerd2 (or Istio, AWS App Mesh, nginx...)
 
+# Flux2 Kustomize Helm
+
+[fluxcd/flux2-kustomize-helm-example](https://github.com/fluxcd/flux2-kustomize-helm-example)
+
+Example how to manage multiple clusters (staging, production)
+
 # So Much More
 
 We wanted to show you so much more
@@ -132,9 +138,9 @@ We wanted to show you so much more
 
 We wanted to show you so much more
 
-* [alexellis/arkade](https://github.com/alexellis/arkade) - opinionated Helm (and other) packages for your Kubernetes cluster
+* [alexellis/arkade](https://github.com/alexellis/arkade) - opinionated packages
 
-Curated Constellations - make your own, or borrow opinions of others :)
+Curated Constellations - make your own, or borrow opinions of others :) we show you ours
 
 # So Much More
 
@@ -144,6 +150,9 @@ We wanted to show you so much more
 
 Let's Encrypt certificates
 
+[cert-manager](https://cert-manager.io)
+[docs](https://cert-manager.io/docs/)
+
 # So Much More
 
 We wanted to show you so much more
@@ -151,7 +160,7 @@ We wanted to show you so much more
 * [loft-sh/kiosk](https://github.com/loft-sh/kiosk)
 * [loft.sh](https://loft.sh)
 
-Manage multi-tenancy (entry-level configuration)
+Manage multi-tenancy another way (entry-level configuration)
 
 # So Much More
 

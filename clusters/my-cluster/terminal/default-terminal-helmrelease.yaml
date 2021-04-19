@@ -16,6 +16,7 @@ spec:
   install:
     createNamespace: true
   targetNamespace: terminal
+  releaseName: terminal
   values:
     ingress:
       enabled: false

@@ -22,3 +22,8 @@ spec:
       enabled: true
     service:
       type: ClusterIP
+    wordpressPassword: changeMe7654
+    mariadb:
+      auth:
+        rootPassword: seriouslyPlzchangeMe987346
+        password: changeMe987346

@@ -16,3 +16,5 @@ spec:
   install:
     createNamespace: true
   targetNamespace: kyverno
+  values:
+    doesntmatter: "different"

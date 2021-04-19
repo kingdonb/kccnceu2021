@@ -1,0 +1,19 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: wordpress
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: wordpress
+      version: '10.10.3'
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+  interval: 15m0s
+  install:
+    createNamespace: true
+  targetNamespace: wordpress
+  releaseName: wordpress

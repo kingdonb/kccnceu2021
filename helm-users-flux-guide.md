@@ -1,7 +1,7 @@
 # Helm Users! What Can Flux v2 Do For You
 
 author
-:   @kingdonb and @r6by
+:   @yebyen and @r6by
 
 date
 :   2021-05-05
@@ -57,8 +57,8 @@ We will install all controllers
 We will install all controllers
 
 * notification controller
-* (image-automation-controller)
-* (image-reflector-controller)
+* (image-automation)
+* (image-reflector)
 
 # kyverno
 
@@ -114,7 +114,7 @@ Package Management
 
 We wanted to show you so much more
 
-* image-automation-controller
+* image-automation
 * image-reflector-controller
 
 Flux v2's new and improved image automation
@@ -154,11 +154,11 @@ A presentation tool for Rubyist
 
 (How we got those neat tortoise/hare icons at the bottom of the screen!)
 
-# DEMO 2
+# DEMO NOTES
 
-Bootstrapping with Kind (Kubernetes in Docker)
+Follow along at home
 
-`https://gist.github.com/scottrigby/65c1fbb1f6437f6cfa11b594cf8e26a9`
+[bit.ly/32rUInK](https://bit.ly/32rUInK)
 
 # Thanks
 

@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ingress-nginx
+  name: ingress
   namespace: default
 spec:
   chart:
@@ -16,4 +16,4 @@ spec:
   install:
     createNamespace: true
   targetNamespace: ingress-nginx
-  releaseName: nginx-ingress
+  releaseName: nginx

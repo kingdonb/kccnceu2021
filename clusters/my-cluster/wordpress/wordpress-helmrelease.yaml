@@ -17,3 +17,8 @@ spec:
     createNamespace: true
   targetNamespace: wordpress
   releaseName: wordpress
+  values:
+    ingress:
+      enabled: true
+    service:
+      type: ClusterIP

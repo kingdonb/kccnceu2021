@@ -5,9 +5,9 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 15m0s
   ref:
-    branch: main
+    branch: webhook
   secretRef:
     name: flux-system
   url: https://github.com/kingdonb/kccnceu2021.git
@@ -18,7 +18,7 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 20m0s
   path: ./clusters/my-cluster
   prune: true
   sourceRef:

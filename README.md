@@ -300,6 +300,10 @@ I'm afraid this is a bug, or at least gap in our documentation. The webhook rece
 
 I switched to `Ingress` for the receiver instead, which is also demonstrated in the **present** branch of the `kingdonb/kccnceu2021` repo.
 
+To get the load balancer working, just delete all of the NetworkPolicy resources in there if you have this issue too. Drat. This is embarassing.
+
+In my demo, I actually removed the network policies in advance so that this would work. When you ran `flux bootstrap` you probably put them back, and will likely hit this issue again.
+
 Moving on... (it works!)
 
 ### Wordpress

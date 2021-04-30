@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: okteto-apps
+  namespace: terminal
+spec:
+  interval: 5m0s
+  url: https://apps.okteto.com
+

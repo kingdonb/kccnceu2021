@@ -51,3 +51,69 @@ spec:
       kind: Deployment
       name: nginx-ingress-nginx-controller
       namespace: ingress-nginx
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: cert-manager
+  namespace: flux-system
+spec:
+  interval: 10m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/cert-manager
+  prune: true
+  validation: client
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: cert-manager
+      namespace: cert-manager
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: cert-manager-cainjector
+      namespace: cert-manager
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: cert-manager-webhook
+      namespace: cert-manager
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+# kind: Kustomization
+# metadata:
+#   name: cert-issuers
+#   namespace: flux-system
+# spec:
+#   dependsOn:
+#     - name: cert-manager
+#   interval: 5m
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+#   path: ./infrastructure/cert-issuers
+#   prune: true
+#   validation: client
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+# kind: Kustomization
+# metadata:
+#   name: certs
+#   namespace: flux-system
+# spec:
+#   dependsOn:
+#     - name: cert-manager
+#     - name: cert-issuers
+#     - name: my-secrets
+#   healthChecks:
+#     - apiVersion: cert-manager.io/v1
+#       kind: Certificate
+#       name: webhook-hephy-dev-tls
+#       namespace: flux-system
+#   interval: 5m
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+#   path: ./infrastructure/certs
+#   prune: true
+#   validation: client

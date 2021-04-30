@@ -1,0 +1,27 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"cert-manager.io/v1","kind":"Certificate","metadata":{"annotations":{},"name":"webhook-hephy-dev-tls","namespace":"flux-system","ownerReferences":[{"apiVersion":"networking.k8s.io/v1beta1","blockOwnerDeletion":true,"controller":true,"kind":"Ingress","name":"webhook-receiver","uid":"4f2c046c-a1f7-4d34-ac26-1be306e21e13"}],"uid":"fb7db055-bb21-4884-a770-b2205bbb9dfe"},"spec":{"dnsNames":["webhook.hephy.dev"],"issuerRef":{"group":"cert-manager.io","kind":"ClusterIssuer","name":"letsencrypt-production"},"secretName":"webhook-hephy-dev-tls","usages":["digital signature","key encipherment"]}}
+  name: webhook-hephy-dev-tls
+  namespace: flux-system
+  ownerReferences:
+  - apiVersion: networking.k8s.io/v1beta1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Ingress
+    name: webhook-receiver
+    uid: 4f2c046c-a1f7-4d34-ac26-1be306e21e13
+  uid: fb7db055-bb21-4884-a770-b2205bbb9dfe
+spec:
+  dnsNames:
+  - webhook.hephy.dev
+  issuerRef:
+    group: cert-manager.io
+    kind: ClusterIssuer
+    name: letsencrypt-production
+  secretName: webhook-hephy-dev-tls
+  usages:
+  - digital signature
+  - key encipherment

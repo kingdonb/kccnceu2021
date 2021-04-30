@@ -6,6 +6,9 @@ metadata:
 spec:
   dependsOn:
     - name: kyverno-policies
+    - name: cert-issuers
+    - name: my-secrets
+    - name: ingress-nginx
   interval: 5m
   sourceRef:
     kind: GitRepository

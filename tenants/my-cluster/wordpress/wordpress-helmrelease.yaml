@@ -1,0 +1,32 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: wordpress
+  namespace: wordpress
+spec:
+  serviceAccountName: wordpress-sync
+  dependsOn:
+    - name: ingress
+      namespace: flux-system
+  chart:
+    spec:
+      chart: wordpress
+      version: '10.10.13'
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+  interval: 15m0s
+  targetNamespace: wordpress
+  releaseName: wordpress
+  values:
+    noop: true
+    ingress:
+      enabled: true
+    service:
+      type: ClusterIP
+    wordpressPassword: changeMe7654
+    mariadb:
+      auth:
+        rootPassword: seriouslyPlzchangeMe987346
+        password: changeMe987346

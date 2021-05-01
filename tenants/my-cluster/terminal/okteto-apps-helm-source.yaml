@@ -1,10 +1,10 @@
----
 apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: HelmRepository
+kind: GitRepository
 metadata:
-  name: okteto-apps
-  namespace: terminal
+  name: okteto-charts
+  namespace: default
 spec:
-  interval: 5m0s
-  url: https://apps.okteto.com
-
+  interval: 15m0s
+  ref:
+    branch: master
+  url: https://github.com/kingdonb/okteto-charts

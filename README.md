@@ -250,6 +250,58 @@ Go ahead and follow the guide, or skip to the step where you generate a secret a
 
 A reference to the SOPS guide is placed later on, so you can encrypt secrets and store them in the repository too, just like we did in the demo.
 
+Follow the SOPS guide to generate your own `sops-gpg` secret, and overwrite the file `secrets/my-cluster/webhook-token-secret.yaml` with one that you generated.
+
+The steps to generate the webhook token secret are in the Webhook Receiver guide. The steps to encrypt it properly are in the Mozilla SOPS guide. Read both guides accordingly to gain a thorough understanding of both topics!
+
+The short version, once you have generated your GPG key from the guide and set up `.sops.yaml` in the cluster directory and in the secrets directory, is this:
+
+```
+TOKEN=$(head -c 12 /dev/urandom | shasum | cut -d ' ' -f1)
+echo $TOKEN
+
+kubectl -n flux-system create secret generic webhook-token \
+--from-literal=token=$TOKEN --dry-run=client -oyaml > secrets/my-cluster/webhook-token-secret.yaml
+
+cd secrets/my-cluster/
+sops -e -i webhook-token-secret.yaml
+```
+
+Until the `webhook-token` secret is ready, the Webhook Receiver will continue reporting this error condition:
+
+```
+$ flux get receivers
+NAME       	READY	MESSAGE                                                                                             	SUSPENDED
+flux-system	False	unable to read token from secret 'flux-system/webhook-token' error: Secret "webhook-token" not found	False
+```
+
+With this change, if we tell Flux to reconcile the receiver, (or if we just wait a little longer) it looks somewhat better now!
+
+```
+$ flux reconcile receiver flux-system
+► annotating Receiver flux-system in flux-system namespace
+✔ Receiver annotated
+◎ waiting for Receiver reconciliation
+✔ Receiver reconciliation completed
+$ flux get receivers
+NAME       	READY	MESSAGE                                                                                              	SUSPENDED
+flux-system	True 	Receiver initialised with URL: /hook/69660bb1b387b0962f56fd958ae2570262c6cb55cd6c5d787f3851dc0de4ff61	False
+```
+
+It looks much better now! Visit the webhook configuration page `https://github.com/[YOUR_GITHUB_ID]/kccnceu2021/settings/hooks` and finish the configuration there, following the steps described in the guide.
+
+We can test our webhook by pushing another commit and watching the output of `kubectl get ks -w -n flux-system` and `kubectl get gitrepositories -w -n flux-system` for an idea of how quickly the effect occurs.
+
+#### It didn't work?
+
+It didn't work! On our cluster, we tried using a Load Balancer for the webhook receiver, but it couldn't communicate in `flux-system` due to network policy.
+
+I'm afraid this is a bug, or at least gap in our documentation. The webhook receiver guide only explains how to expose the webhook receiver service with a load balancer. The network policy (at least on DigitalOcean's managed K8s CNI, Cilium) prevented communication between the load balancer and the cluster IP service.
+
+I switched to `Ingress` for the receiver instead, which is also demonstrated in the **present** branch of the `kingdonb/kccnceu2021` repo.
+
+Moving on... (it works!)
+
 ### Wordpress
 
 Go to the `wordpress` namespace

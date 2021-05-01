@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: okteto-charts
-  namespace: default
+  namespace: terminal
 spec:
   interval: 15m0s
   ref:

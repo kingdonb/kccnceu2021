@@ -1,10 +1,13 @@
 # Helm Users! What Flux 2 Can Do For You
 
-Helm, the Package manager for Kubernetes. Flux, the GitOps continuous delivery solution for Kubernetes. Both can be used independently, but are more powerful together. Scott Rigby, Helm and Flux maintainer - and Kingdon Barrett, OSS engineer - will share the benefits of Helm and GitOps for developers, with live demos showcasing the extra awesomeness of Flux v2 and Helm together. This talk is for Helm users who have either never used Flux, or Flux v1 users looking forward to new features in Flux v2.
+Helm, the Package manager for Kubernetes. Flux, the GitOps continuous delivery solution for Kubernetes. Both can be used independently, but are more powerful together.
+
+Scott Rigby, Helm and Flux maintainer - and Kingdon Barrett, OSS engineer - will share the benefits of Helm and GitOps for developers, with live demos showcasing the extra awesomeness of Flux v2 and Helm together. This talk is for Helm users who have either never used Flux, or Flux v1 users looking forward to new features in Flux v2.
 
 [sched.co/iE1e](https://sched.co/iE1e)
 
 Wednesday, May 5 - 13:10 - 13:45 CEST (Central European Summer Time)
+
 Wednesday, May 5 -  7:10 -  7:45 EDT  (Eastern US Daylight Savings Time)
 
 ## For attendee
@@ -13,7 +16,7 @@ Welcome to our talk at KubeCon EU!
 
 This repository lives at [github.com/kingdonb/kccnceu2021](https://github.com/kingdonb/kccnceu2021)
 
-You can repeat the examples that are presented in our talk on any Kubernetes cluster; start by forking this repository. Then, install the latest version of the Flux CLI binary per the instructions in the [Flux Getting Started Guide][install-the-flux-cli].
+You can repeat the examples presented in our talk on any Kubernetes cluster; start by forking this repository. Then, install the latest version of the Flux CLI binary per the instructions in the [Flux Getting Started Guide][install-the-flux-cli].
 
 ### Prerequisites
 
@@ -32,7 +35,7 @@ Assuming that looks OK, add your GitHub User ID in a variable as follows, and ru
 GITHUB_USER=kingdonb
 
 flux bootstrap github --path=./clusters/my-cluster/ \
-  --personal --owner=$GITHUB_USER --repository=kccnceu2021 \
+  --personal --owner=$GITHUB_USER --repository=kccnceu2021 --branch=main \
   --components-extra=image-reflector-controller,image-automation-controller
 ```
 
@@ -42,7 +45,7 @@ The output should look like this:
 ✗ GITHUB_TOKEN environment variable not found
 ```
 
-Set and export the `GITHUB_TOKEN` variable as described in the [Getting Started Guide][prerequisites], section **Prerequisites**. (This guide mentions support for with GitLab, which can also be used instead of GitHub.)
+Set and export the `GITHUB_TOKEN` variable as described in the [Getting Started Guide][prerequisites], section **Prerequisites**. (This guide mentions support for use with GitLab, which can also be used instead of GitHub.)
 
 A personal access token is needed so that Flux can set up read-only deploy keys. Pass the `--token-auth` if you want to give Flux read-write access, (this is only used for the Image Automation part of the demonstration.)
 
@@ -117,7 +120,9 @@ flagger    	True 	Fetched revision: main/c9257bdb99410d5cafd3ae7f18fc0616b90f2c5
 flux-system	True 	Fetched revision: main/acb14c363287833bcbc2c38a09aff4e37148cead	main/acb14c363287833bcbc2c38a09aff4e37148cead	False
 ```
 
-We've synchronized the flagger repo ([github.com/fluxcd/flagger][flagger]) and the flux-system repo (this is your fork of [kingdonb/kccnceu2021][kccnceu2021]) – double great!
+We've synchronized the flagger repo ([github.com/fluxcd/flagger][flagger])
+
+and the flux-system repo (this is your fork of [kingdonb/kccnceu2021][kccnceu2021]) – double great!
 
 Assuming that was all in order, let's check on the Kustomize controller which is reconciling `flux-system`:
 

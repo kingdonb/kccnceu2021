@@ -11,8 +11,8 @@ spec:
       chart: terminal
       version: '0.4'
       sourceRef:
-        kind: HelmRepository
-        name: okteto-apps
+        kind: GitRepository
+        name: okteto-charts
   interval: 15m0s
   releaseName: terminal
   values:

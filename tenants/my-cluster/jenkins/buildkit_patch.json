@@ -1,0 +1,7 @@
+[
+  {"op": "add",
+   "path": "/spec/template/spec/securityContext",
+   "value": { "sysctls": [{"name": "kernel.unprivileged_userns_clone", 
+      "value": "1"}] }
+  }
+]

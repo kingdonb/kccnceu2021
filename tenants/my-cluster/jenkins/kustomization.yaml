@@ -6,3 +6,10 @@ resources:
   - jenkins-helm-source.yaml
   - jenkins-helmrelease.yaml
 namespace: jenkins
+patches:
+- path: buildkit_patch.json
+  target:
+    group: apps
+    version: v1
+    kind: StatefulSet
+    name: buildkitd

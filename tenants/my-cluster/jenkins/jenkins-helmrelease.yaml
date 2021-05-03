@@ -293,7 +293,6 @@ spec:
         other: []
       statefulSetAnnotations: {}
       statefulSetLabels: {}
-      tag: 2.277.2-jdk11
       targetPort: 8080
       terminationGracePeriodSeconds: null
       testEnabled: true

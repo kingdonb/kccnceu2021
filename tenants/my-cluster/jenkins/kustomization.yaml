@@ -5,3 +5,4 @@ resources:
   - tenant.yaml
   - jenkins-helm-source.yaml
   - jenkins-helmrelease.yaml
+namespace: jenkins

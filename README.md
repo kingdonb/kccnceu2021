@@ -12,7 +12,7 @@ Wednesday, May 5 -  7:10 -  7:45 EDT  (Eastern US Daylight Savings Time)
 
 ## For attendee
 
-Welcome to our talk at KubeCon EU!
+Thanks for coming to our talk at KubeCon EU!
 
 This repository lives at [github.com/kingdonb/kccnceu2021](https://github.com/kingdonb/kccnceu2021)
 

@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://raw.githubusercontent.com/moby/buildkit/master/examples/kubernetes/statefulset.rootless.yaml
+  - https://raw.githubusercontent.com/moby/buildkit/master/examples/kubernetes/statefulset.privileged.yaml
   - tenant.yaml
   - jenkins-helm-source.yaml
   - jenkins-helmrelease.yaml
+namespace: jenkins

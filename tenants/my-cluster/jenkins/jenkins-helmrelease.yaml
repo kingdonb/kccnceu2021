@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: jenkins
-      version: '^3.3.0'
+      version: '^3.3.9'
       sourceRef:
         kind: HelmRepository
         name: jenkins
@@ -293,7 +293,6 @@ spec:
         other: []
       statefulSetAnnotations: {}
       statefulSetLabels: {}
-      tag: 2.277.2-jdk11
       targetPort: 8080
       terminationGracePeriodSeconds: null
       testEnabled: true

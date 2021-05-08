@@ -20,7 +20,7 @@ spec:
   targetNamespace: wordpress
   releaseName: wordpress
   values:
-    noop: true
+    noop: false
     ingress:
       enabled: true
     service:

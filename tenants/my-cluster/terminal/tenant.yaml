@@ -53,6 +53,15 @@ metadata:
   namespace: terminal
 
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: terminal
+  name: root
+  namespace: terminal
+
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -72,3 +81,18 @@ subjects:
   name: terminal
   namespace: terminal
 
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: terminal
+  name: terminal-root-godmode
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: root
+  namespace: terminal

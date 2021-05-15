@@ -14,4 +14,20 @@ spec:
   secretRef:
     name: webhook-token
   type: github
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Receiver
+metadata:
+  name: okteto-charts
+  namespace: terminal
+spec:
+  events:
+  - ping
+  - push
+  resources:
+  - kind: GitRepository
+    name: okteto-charts
+  secretRef:
+    name: webhook-token
+  type: github
 

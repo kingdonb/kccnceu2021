@@ -9,10 +9,10 @@ spec:
   chart:
     spec:
       chart: terminal
-      version: '0.2'
+      version: '^0.5.0'
       sourceRef:
-        kind: HelmRepository
-        name: okteto-apps
+        kind: GitRepository
+        name: okteto-charts
   interval: 15m0s
   releaseName: terminal
   values:
